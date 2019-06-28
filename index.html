@@ -10,7 +10,8 @@
         <script>
             window.onload = function() {
                 Vue.config.keyCodes = {
-                    f1: 112
+                    f1: 112,
+                    f2: 113
                 }
                 let vm = new Vue({
                     el: '#app',
@@ -25,6 +26,10 @@
                             let btn = document.getElementsByTagName('input')[0];
                             btn.select();
                             document.execCommand('copy');
+                        },
+
+                        del: function(){
+                            this.search = '';
                         }
                     }
                 });
@@ -33,8 +38,8 @@
     </head>
     <body>
         <div id="app">
-            <h2>Чтобы скопировать текст из формы - нажмите "f1"</h2>
-            <input type="search" placeholder="Search" v-model='search' v-on:keydown.f1='copy'>
+            <h2>Чтобы скопировать текст из формы - нажмите "f1". Удалить - f2.</h2>
+            <input type="search" placeholder="Search" v-model='search' v-on:keydown.f1='copy' v-on:keydown.f2='del'>
             <p>{{search}}</p>
         </div>
     </body>
