@@ -38,7 +38,7 @@
     </head>
     <body>
         <div id="app">
-            <h2>Чтобы скопировать текст из формы - нажмите "f1". Удалить - f2.</h2>
+            <h2 style="font-family: Arial; color:dimgray;">Чтобы скопировать текст из формы - нажмите "f1". Удалить - "f2".</h2>
             <input type="search" placeholder="Search" v-model='search' v-on:keydown.f1='copy' v-on:keydown.f2='del'>
             <p>{{search}}</p>
         </div>
